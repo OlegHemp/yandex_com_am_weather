@@ -23,16 +23,18 @@
     - [X] получаем необходимые данные (_см. ниже_), сохраняя в список словарей
 - [X] записываем в `temperature.json` полученный список словарей:
 ```json
-[
-    {
-        "fact_location": "Омск",
-        "fact_title": "Кировский округ",
-        "temp_sign": "+",
-        "temp_value": "15",
-        "temp_weather": "малооблачно. В ближайшие 2 часа осадков не ожидается"
-    },
-  ...
-]
+{
+  "temp": [
+            {
+              "fact_location": "Омск",
+              "fact_title": "Кировский округ",
+              "temp_sign": "+",
+              "temp_value": "15",
+              "temp_weather": "малооблачно. В ближайшие 2 часа осадков не ожидается"
+            },
+          ...
+          ]
+}
 ```
 - [ ] Создаём статичную страничку `index.html`
 - [ ] С помощью JavaScript выводим полученный результат в `index.html`
@@ -108,6 +110,10 @@
 ```
  ~$  sudo npm install -g json-server
 ```
+Запуск JSON-сервера:
+```json-server  temperature.json –w
+```
+
 ### Используемый материал ###
 + [Контекстные Менеджеры в Python](https://python-scripts.com/contextlib)
 + [JSON в Python](https://python-scripts.com/json)

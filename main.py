@@ -29,7 +29,7 @@ def save_json(to_json: list) -> None:
 
 
 def main():
-    parse_list = []
+    parse_list = {"temp": []}
     coordinate_dict = read_json("coordinates.json")
     for elem in coordinate_dict["coordinates"]:
         rez = {}
@@ -40,16 +40,16 @@ def main():
         txt = bs(respons.text, "lxml")
         rez["fact_location"] = txt.find('h2', 'weather-maps-fact__location').text
         rez["fact_title"] = txt.find('h1', 'weather-maps-fact__title').text
-        rez["temp_sign"] = txt.find('span', 'temp__sign').text
-        rez["temp_value"] = txt.find('span', 'temp__value_with-unit').find('span', 'temp__value').text
+       # rez["temp_sign"] = txt.find('span', 'temp__sign').text
+       # rez["temp_value"] = txt.find('span', 'temp__value_with-unit').find('span', 'temp__value').text
         try:
             temp_weather = txt.find('div', 'weather-maps-fact__nowcast-alert').text
             rez["temp_weather"] = " ".join(temp_weather.split())
         except Exception as e:
             rez["temp_weather"] = "--"
             logging.warning(f"Отсутствует значение у ключа rez['temp_weather']. \n {e}\n{url}")
-        parse_list.append(rez)
-    logging.info(f"Список из {len(parse_list)} элементов для записи в файл temperature.json подготовлен.")
+        parse_list["temp"].append(rez)
+    logging.info(f"Список из {len(parse_list['temp'])} элементов для записи в файл temperature.json подготовлен.")
     save_json(parse_list)
 
 
