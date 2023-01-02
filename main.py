@@ -22,9 +22,9 @@ def read_json(file_name: str) -> dict:
         return {"coordinates": []}
 
 
-def save_json(to_json: list) -> None:
+def save_json(to_json: dict) -> None:
     with open('temperature.json', 'w') as f:
-        json.dump(to_json, f, indent=4,  ensure_ascii=False, separators=(',', ': '))
+        json.dump(to_json, f, indent=4, ensure_ascii=False, separators=(',', ': '))
         logging.info(f"Список записан в файл temperature.json.")
 
 
@@ -40,8 +40,9 @@ def main():
         txt = bs(respons.text, "lxml")
         rez["fact_location"] = txt.find('h2', 'weather-maps-fact__location').text
         rez["fact_title"] = txt.find('h1', 'weather-maps-fact__title').text
-       # rez["temp_sign"] = txt.find('span', 'temp__sign').text
-       # rez["temp_value"] = txt.find('span', 'temp__value_with-unit').find('span', 'temp__value').text
+        tmp_t = txt.find('span', 'temp__value temp__value_with-unit').text
+        rez["temp_sign"], rez["temp_value"] = ("", int(tmp_t)) if tmp_t[0].isdigit() else (tmp_t[0], int(tmp_t[1:]))
+
         try:
             temp_weather = txt.find('div', 'weather-maps-fact__nowcast-alert').text
             rez["temp_weather"] = " ".join(temp_weather.split())
