@@ -21,7 +21,7 @@
 - [X] `main.py` в цикле: 
     - [X] формирует ссылку для запроса согласно полученным координатам
     - [X] получаем необходимые данные (_см. ниже_), сохраняя в список словарей
-- [X] записываем в `temperature.json` полученный список словарей:
+- [X] записываем в `temperature.json` полученный словарь:
 ```json
 {
   "temp": [
@@ -38,7 +38,7 @@
 ```
 - [ ] Создаём статичную страничку `index.html`
 - [ ] С помощью JavaScript выводим полученный результат в `index.html`
-
+  - [X] Необходимо установить JSON-сервер, чтобы отдавать в html документ json.
 ### Парсим температуру окружающей среды ###  
 Ссылка для парсинга (пример): [https://yandex.com.am/weather/maps/nowcast?via=mmapwb&le_Lightning=1&ll=37.640675_55.752808&z=13&lat=55.75271126516939&lon=37.620075222783065](https://yandex.com.am/weather/maps/nowcast?via=mmapwb&le_Lightning=1&ll=37.640675_55.752808&z=13&lat=55.75271126516939&lon=37.620075222783065)  
 Можно сократить до вида:[https://yandex.com.am/weather/maps/nowcast?&lat=55.75271126516939&lon=37.620075222783065](https://yandex.com.am/weather/maps/nowcast?&lat=55.75271126516939&lon=37.620075222783065)  
@@ -111,8 +111,11 @@
  ~$  sudo npm install -g json-server
 ```
 Запуск JSON-сервера:
-```json-server  temperature.json –w
 ```
+json-server  temperature.json –w --port 3001
+```
+* Проверяем: http://localhost:3001/temp
+
 
 ### Используемый материал ###
 + [Контекстные Менеджеры в Python](https://python-scripts.com/contextlib)
@@ -121,3 +124,4 @@
 + [Python: Логируем как профессионалы](https://habr.com/ru/company/otus/blog/590067/)
 + [Как установить Node.js на Ubuntu](https://help.reg.ru/support/servery-vps/oblachnyye-servery/ustanovka-programmnogo-obespecheniya/kak-ustanovit-node-js-na-ubuntu)
 + [ typicode / json-server ](https://github.com/typicode/json-server)
++ [Знакомство с REST API и форматом JSON / YOUTUBE ](https://www.youtube.com/watch?v=sUsTbcVGvMM)
