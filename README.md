@@ -37,7 +37,7 @@
 }
 ```
 - [ ] Создаём статичную страничку `index.html`
-- [ ] С помощью JavaScript выводим полученный результат в `index.html`
+- [X] С помощью JavaScript выводим полученный результат в `index.html`
   - [X] Необходимо установить JSON-сервер, чтобы отдавать в html документ json.
 ### Парсим температуру окружающей среды ###  
 Ссылка для парсинга (пример): [https://yandex.com.am/weather/maps/nowcast?via=mmapwb&le_Lightning=1&ll=37.640675_55.752808&z=13&lat=55.75271126516939&lon=37.620075222783065](https://yandex.com.am/weather/maps/nowcast?via=mmapwb&le_Lightning=1&ll=37.640675_55.752808&z=13&lat=55.75271126516939&lon=37.620075222783065)  
@@ -45,17 +45,21 @@
 
 На странице сайта интересен этот код:
  ``` html
- <span class="temp__value temp__value_with-unit">
-    <span class="temp__sign">+</span>
-    <span class="temp__value">16</span>
- </span>
+ <div class="weather-maps-fact">
+    <h1 class="weather-maps-fact__title">Тверской район</h1>
+    <h2 class="weather-maps-fact__location">Москва</h2>
+    <div class="weather-maps-fact__base">
+      <div class="weather-maps-fact__temp">
+        <div class="temp" role="text">
+          <span class="temp__value temp__value_with-unit">−4</span>
+        </div>
+      </div>
+    <img class="icon icon_color_dark icon_size_40 icon_thumb_bkn-d weather-maps-fact__icon" aria-hidden="true" src="//yastatic.net/weather/i/icons/funky/dark/bkn_d.svg"></div>
+    <div class="weather-maps-fact__nowcast-alert">облачно с прояснениями. В ближайшие 2 часа осадков не&nbsp;ожидается</div>
+ </div>
  ```
-```html
-<h1 class="weather-maps-fact__title">Ленинский район</h1>
-<h2 class="weather-maps-fact__location">Челябинск</h2>
-
-<div class="weather-maps-fact__nowcast-alert">пасмурно. В ближайшие 2 часа осадков не&nbsp;ожидается</div>
-```
+Поясняющая схема:  
+![Alt-текст](./doc/parse_weather.jpg "Схема парсинга")  
 Используем функцию ```find()```, которая принимает два аргумента:
 + указание на тип элемента HTML-кода, в котором происходит поиск;
 + наименование этого элемента.
@@ -115,7 +119,10 @@
 json-server  temperature.json –w --port 3001
 ```
 * Проверяем: http://localhost:3001/temp
-
+Должно, получиться, нечто подобное:  
+![Alt-текст](./doc/json-server.png "json-server")  
+* Открываемl локальную страничку _index.html_:  
+![Alt-текст](./doc/str.png "str") 
 
 ### Используемый материал ###
 + [Контекстные Менеджеры в Python](https://python-scripts.com/contextlib)

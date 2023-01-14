@@ -29,12 +29,15 @@ def save_json(to_json: dict) -> None:
 
 
 def main():
+    headers = {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:108.0) Gecko/20100101 Firefox/108.0"}
     parse_list = {"temp": []}
     coordinate_dict = read_json("coordinates.json")
     for elem in coordinate_dict["coordinates"]:
         rez = {}
         url = f'https://yandex.com.am/weather/maps/nowcast?via=mmapwb&lat={elem["latitude"]}&lon={elem["longitude"]}'
-        respons = requests.get(url)
+        respons = requests.get(url, headers=headers)
         if respons.status_code != 200:
             logging.warning(f"Код ответа {respons.status_code}. Страница не прочитана. \n {url}")
         txt = bs(respons.text, "lxml")

@@ -1,0 +1,102 @@
+{
+    "temp": [
+        {
+            "fact_location": "Реутов",
+            "fact_title": "3-й микрорайон",
+            "temp_sign": "−",
+            "temp_value": 3,
+            "temp_weather": "пасмурно. В ближайшие 2 часа осадков не ожидается"
+        },
+        {
+            "fact_location": "Москва",
+            "fact_title": "район Арбат",
+            "temp_sign": "−",
+            "temp_value": 3,
+            "temp_weather": "пасмурно. В ближайшие 2 часа осадков не ожидается"
+        },
+        {
+            "fact_location": "Москва и Московская область",
+            "fact_title": "Щёлково",
+            "temp_sign": "−",
+            "temp_value": 4,
+            "temp_weather": "пасмурно. В ближайшие 2 часа осадков не ожидается"
+        },
+        {
+            "fact_location": "Клин",
+            "fact_title": "микрорайон Центр-2",
+            "temp_sign": "−",
+            "temp_value": 3,
+            "temp_weather": "пасмурно. В ближайшие 2 часа осадков не ожидается"
+        },
+        {
+            "fact_location": "Тверь",
+            "fact_title": "Центральный район",
+            "temp_sign": "−",
+            "temp_value": 2,
+            "temp_weather": "пасмурно. В ближайшие 2 часа осадков не ожидается"
+        },
+        {
+            "fact_location": "Великий Новгород",
+            "fact_title": "7-й квартал",
+            "temp_sign": "+",
+            "temp_value": 1,
+            "temp_weather": "пасмурно. В ближайшие 2 часа осадков не ожидается"
+        },
+        {
+            "fact_location": "Нижний Новгород",
+            "fact_title": "микрорайон Гордеевский",
+            "temp_sign": "−",
+            "temp_value": 7,
+            "temp_weather": "пасмурно. В ближайшие 2 часа осадков не ожидается"
+        },
+        {
+            "fact_location": "Казань",
+            "fact_title": "Вахитовский район",
+            "temp_sign": "−",
+            "temp_value": 13,
+            "temp_weather": "облачно с прояснениями. В ближайшие 2 часа осадков не ожидается"
+        },
+        {
+            "fact_location": "Челябинск",
+            "fact_title": "Ленинский район",
+            "temp_sign": "−",
+            "temp_value": 7,
+            "temp_weather": "пасмурно. В ближайшие 2 часа осадков не ожидается"
+        },
+        {
+            "fact_location": "Екатеринбург",
+            "fact_title": "жилой район ВИЗ",
+            "temp_sign": "−",
+            "temp_value": 10,
+            "temp_weather": "пасмурно. В ближайшие 2 часа осадков не ожидается"
+        },
+        {
+            "fact_location": "Омск",
+            "fact_title": "Кировский округ",
+            "temp_sign": "−",
+            "temp_value": 8,
+            "temp_weather": "пасмурно. В ближайшие 2 часа осадков не ожидается"
+        },
+        {
+            "fact_location": "Новосибирск",
+            "fact_title": "Центральный район",
+            "temp_sign": "−",
+            "temp_value": 11,
+            "temp_weather": "В течение 2 часов снег закончится"
+        },
+        {
+            "fact_location": "Магнитогорск",
+            "fact_title": "Правобережный район",
+            "temp_sign": "−",
+            "temp_value": 10,
+            "temp_weather": "ясно. В ближайшие 2 часа осадков не ожидается"
+        },
+        {
+            "fact_location": "Уфа",
+            "fact_title": "Советский район",
+            "temp_sign": "−",
+            "temp_value": 17,
+            "temp_weather": "ясно. В ближайшие 2 часа осадков не ожидается"
+        }
+    ]
+}

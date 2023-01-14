@@ -2,8 +2,8 @@ fetch(
     'http://localhost:3001/temp'
 ).then((res) => res.json()).then( data => setWeather(data));
 function setWeather(data){
-    document.body.insertAdjacentHTML(
-      'afterend',
+    document.querySelector('#tabl').insertAdjacentHTML(
+      'afterbegin',
         `
         <table class="table_dark">
   <tr>
